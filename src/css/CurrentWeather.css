@@ -1,0 +1,21 @@
+.currentweather{
+    grid-area: current;
+    text-align: center;
+    font-size: 2.4rem;
+}
+div.current-city{
+    cursor: pointer;
+    font-size: 3rem;
+}
+.current-city > span{
+    padding-right: 2rem;
+}
+div.current-temp, .current-temp>.iconfont{
+    padding-top: 0;
+    font-size: 5rem;
+    padding-right: 1rem;
+    margin-top: -1rem;
+}
+.iconfont.current-icon{
+    font-size: 6rem;
+}

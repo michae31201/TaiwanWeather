@@ -1,0 +1,17 @@
+.app-container{
+    padding: 3.2rem 0;
+    margin: 0 auto;
+    max-width: 480px;
+    animation-delay: 0.5s;
+}
+
+@media screen and (min-width:768px){
+  .app-container{
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: 38% 5% 57%;
+    grid-template-areas: "current  . detil"
+                         "hourly hourly hourly"
+                         "daily daily daily";
+  }
+}

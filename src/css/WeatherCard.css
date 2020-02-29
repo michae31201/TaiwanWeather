@@ -1,0 +1,27 @@
+.card{
+    display: inline-block;
+    padding: 0 1.8rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.card .iconfont{
+    display: block;
+    font-size: 5rem;
+    padding: 1.2rem;
+}
+.card p{
+    line-height: 2rem;
+}
+
+@media screen and (min-width: 768px){
+    .card{
+        font-size: 1.5rem;
+    }
+    .card .iconfont{
+        font-size: 4rem;
+    }
+    .card p{
+        line-height: 1.2rem;
+    }
+}

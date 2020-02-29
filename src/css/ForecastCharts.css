@@ -1,0 +1,41 @@
+.forecastcharts{
+    max-width: 100vw;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+ }
+ 
+ .forecastcharts:hover::-webkit-scrollbar-thumb {
+     visibility: visible;
+ }
+   
+ .forecastcharts::-webkit-scrollbar {
+    height: 1rem;
+ }
+  
+ .forecastcharts::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(250, 250, 250, 0.6);
+    visibility: hidden;
+ }
+  
+ .forecastcharts::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(250, 250, 250, 0.8);
+ }
+
+.tooltip-content{
+    background-color: rgb(170, 170, 170);
+    border:1px solid lightgray;
+    padding: 0 2rem;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+.temp-color{
+    color: rgb(230, 65, 0);
+}
+.humidity-color{
+    color: rgb(4, 64, 155);
+}

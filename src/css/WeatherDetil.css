@@ -1,0 +1,34 @@
+.weatherdetil{
+    grid-area: detil;
+    max-width: 100%;
+    padding-left: 2.5rem;
+}
+
+.detil{
+    display: inline-block;
+    width: 50%;
+    padding-top: 2rem;
+}
+.detil > div{
+    display: inline-block;
+}
+.detil-icon.iconfont{
+    padding-right: .8rem;
+    font-size: 3.5rem;
+}
+.detil-title{
+    display: block;
+    font-size: 1.8rem;
+}
+
+.detil-text{
+    font-size: 2.4rem;
+}
+
+@media screen and (min-width:768px){
+    .detil{
+        width: 50%;
+        padding-top: 0;
+        padding-bottom: 1.2rem;
+    }
+}

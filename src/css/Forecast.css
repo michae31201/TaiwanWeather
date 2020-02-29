@@ -1,0 +1,56 @@
+.forecast{
+    padding-top: 1.5rem;
+    width:90%;
+    margin: auto;
+    
+}
+.hourly{
+    grid-area: hourly;
+}
+.daily{
+    grid-area: daily;
+}
+.forecast-title{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .5rem;
+}
+
+.button-group{
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+}
+.switch-button{
+    width: 50%;
+    background-color: transparent;
+    border: 0;
+    color: darkgray;
+}
+
+.left-button{
+    border: 1px dashed white;
+    border-radius: 1rem 0 0 1rem;
+}
+.right-button{
+    border: 1px dashed white;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.button-text{
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    pointer-events: none;
+    font-size: 1.8rem;
+}
+
+.button-selected{
+    font-weight: 800;
+    border: 2px solid white;
+    color: white;
+}
+
+.switch-button i{
+    user-select: none;
+    pointer-events: none;
+}

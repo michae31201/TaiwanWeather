@@ -1,0 +1,31 @@
+@keyframes cloud-slide {
+    from {
+        transform: translateX(0vw);
+    }
+    to {
+        transform: translateX(-90vw);
+    }
+}
+
+.cloudeffect{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+}
+
+.cloud{
+    display: block;
+    height: 50rem;
+    opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
+    animation: cloud-slide 100s linear infinite;
+}
+
+.cloud-image{
+    height: inherit;
+}
