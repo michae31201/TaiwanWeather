@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1118633",
+      "name": "gps",
+      "font_class": "gps",
+      "unicode": "e6d9",
+      "unicode_decimal": 59097
+    },
+    {
       "icon_id": "113908",
       "name": "雨夹雪 Sleet",
       "font_class": "yujiaxuesleet",
