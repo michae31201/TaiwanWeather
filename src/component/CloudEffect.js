@@ -12,6 +12,11 @@ const CloudEffect = () => {
                 <source srcSet={cloud_webp} type="image/webp"/>
                 <img src={cloud_png} alt={"cloud"} className="cloud-image"/>
             </picture>
+            <picture className="cloud2">
+                <source srcSet={cloud_jp2} type="image/jp2"/>
+                <source srcSet={cloud_webp} type="image/webp"/>
+                <img src={cloud_png} alt={"cloud"} className="cloud-image"/>
+            </picture>
         </div>
     )
 }

@@ -16,7 +16,7 @@ class CurrentWeather extends React.Component{
                                    <i className="iconfont icon-search"></i>
                             </div>
                             <div>
-                                {currently.time}
+                                <p>{currently.time}</p>
                             </div>
                             <div>
                                 <i className={`current-icon iconfont icon-${currently.icon}`}></i>

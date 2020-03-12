@@ -1,29 +1,39 @@
 @keyframes cloud-slide {
     from {
-        transform: translateX(0vw);
+        transform: translateX(90vw);
     }
     to {
-        transform: translateX(-90vw);
+        transform: translateX(-320vw);
     }
 }
 
+
+
 .cloudeffect{
-    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     overflow: hidden;
     user-select: none;
     pointer-events: none;
+    opacity: 0.5;
 }
 
 .cloud{
-    display: block;
+    position: fixed;
+    display: inline-block;
     height: 50rem;
-    opacity: 0.5;
     user-select: none;
     pointer-events: none;
     animation: cloud-slide 100s linear infinite;
+}
+.cloud2{
+    position:fixed;
+    display: inline-block;
+    height: 50rem;
+    user-select: none;
+    pointer-events: none;
+    animation: cloud-slide 70s linear infinite;
 }
 
 .cloud-image{

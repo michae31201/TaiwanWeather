@@ -5,17 +5,20 @@
 }
 div.current-city{
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 .current-city > span{
     padding-right: 2rem;
 }
-div.current-temp, .current-temp>.iconfont{
+div.current-temp, .current-temp>.icon-temp{
     padding-top: 0;
     font-size: 5rem;
     padding-right: 1rem;
     margin-top: -1rem;
 }
-.iconfont.current-icon{
+.currentweather p{
+    margin: 1.1rem 0;
+}
+.current-icon.iconfont{
     font-size: 6rem;
 }
