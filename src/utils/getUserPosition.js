@@ -1,8 +1,10 @@
-const getPosition = () => {
+
+const getUserPosition = () => {
     if("geolocation" in navigator){
         return new Promise((resolve) => {
             navigator.geolocation.getCurrentPosition((position) => {
-                resolve(position.coords)
+                const {coords} = position;
+                resolve({lng:coords.longitude, lat:coords.latitude});
             },() => {
                 resolve(null);
             })
@@ -12,4 +14,4 @@ const getPosition = () => {
     }
 }
 
-export default getPosition;
+export default getUserPosition;

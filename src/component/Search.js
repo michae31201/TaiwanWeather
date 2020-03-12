@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import searchCityList from '../utils/searchCityList';
 import '../css/Search.css';
-//import 'animate.css';
+import { WeatherContext } from '../WeatherStore';
+import 'animate.css';
 
 class Search extends React.Component{
     state={
@@ -40,44 +41,53 @@ class Search extends React.Component{
         const {isSearching, cityList, searchValue} = this.state;
 
         return(
-                <div className="search animated fadeInDown fast">
-                    <div className="search-container">
-                        <button className="back-button" onClick={this.props.handleSearchClose}>
-                            <i className="iconfont icon-back"></i>
-                        </button>
-                        <input type="search" className="search-input" autoFocus placeholder="搜尋" value={searchValue} onChange={this.onChangeHandler} onKeyPress={this.onKeyPressHandler}/>
-                        <button className="search-button" onClick={this.searchCity}>
-                            <i className="iconfont icon-search"></i>
-                        </button>
-                    </div>
-                    <div className="city-list">
-                    {
-                        isSearching ? 
-                           (<div className="loading">
-                                <i className="iconfont icon-loading loading-spin"></i>
-                                <span>搜尋中...</span>
-                            </div>):null
-                    }
-                    {
-                        !isSearching && cityList.length === 0 ?
-                           (<div className="loading">
-                                <i className="iconfont icon-empty"></i>
-                                <span>沒有符合的結果</span>
-                            </div>):null
-                    }
-                    {
-                        !isSearching && cityList.map((city, index) => {
-                            const [cityName,region] = city.cityName.split("/");
-                            return  <Link className="search-result animated fadeInDown faster" key={index} to={{pathname:`/${city.cityName}`,state:{"coords":city.coords}}}>
-                                        <div className="city">
-                                            <i className="iconfont icon-landmark"></i>
-                                            {cityName} {region}
-                                        </div>
-                                    </Link>
-                            })
-                    }
-                    </div>
-                </div>
+            <WeatherContext.Consumer>
+                {
+                    ({getUserLocationWeather}) => (
+                        <div className="search animated fadeInDown fast">
+                            <div className="search-container">
+                                <button className="back-button" onClick={this.props.handleSearchClose}>
+                                    <i className="iconfont icon-back"></i>
+                                </button>
+                                <input type="search" className="search-input" autoFocus placeholder="搜尋" value={searchValue} onChange={this.onChangeHandler} onKeyPress={this.onKeyPressHandler}/>
+                                <button className="gps-button" onClick={()=>{getUserLocationWeather();this.props.handleSearchClose();}}>
+                                    <i className="iconfont icon-gps"></i>
+                                </button>
+                                <button className="search-button" onClick={this.searchCity}>
+                                    <i className="iconfont icon-search"></i>
+                                </button>
+                            </div>
+                            <div className="city-list">
+                            {
+                                isSearching ? 
+                                    <div className="loading">
+                                        <i className="iconfont icon-loading loading-spin"></i>
+                                        <span>搜尋中...</span>
+                                    </div>:null
+                            }
+                            {
+                                !isSearching && cityList.length === 0 ?
+                                    <div className="loading">
+                                        <i className="iconfont icon-empty"></i>
+                                        <span>沒有符合的結果</span>
+                                    </div>:null
+                            }
+                            {
+                                !isSearching && cityList.map((city, index) => {
+                                        const [cityName,region] = city.cityName.split("/");
+                                        return  <Link className="search-result animated fadeInDown faster" key={index} to={{pathname:`/${city.cityName}`,state:{"coords":city.coords}}}>
+                                                    <div className="city">
+                                                        <i className="iconfont icon-landmark"></i>
+                                                        {cityName} {region}
+                                                    </div>
+                                                </Link>
+                                    })
+                            }
+                            </div>
+                        </div>
+                    )
+                }
+            </WeatherContext.Consumer>
             )
     }
     

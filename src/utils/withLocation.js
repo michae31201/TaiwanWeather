@@ -1,23 +1,23 @@
 import React from 'react';
 import cities from '../data/taiwancity.json';
+import getCity from './getCity.js';
 
 const withLocation = (Component, props) =>{
     //props 為 Router 帶來的參數 location,match....
     const {location, match} = props;
-    let coords; 
+    let coords;
+
     if(location.state){
         coords = location.state.coords;
     }else if(match.params.city && match.params.region){
-        let city = cities.filter((city)=>(city.cityName.includes(match.params.region)));
-        coords = city[0].coords;
+        let city = cities.find((city)=>(city.cityName.includes(match.params.region)));
+        coords = city.coords;
     }else{
-        coords = {long:"121.5198839",lat:"25.03240487"};
+        coords = {lng:"121.5198839", lat:"25.03240487"};
     }
-    let city = cities.filter((city) => {
-        return city.coords.lat === coords.lat && city.coords.long === coords.long
-    })[0];
+    let cityName = getCity(coords.lng, coords.lat)
 
-    return <Component {...props} key={location.key} coords={coords} city={city.cityName}/>
+    return <Component {...props} key={location.key} coords={coords} city={cityName}/>
 }
 
 export default withLocation;
