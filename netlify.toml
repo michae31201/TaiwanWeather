@@ -1,0 +1,5 @@
+[[redirects]]
+    from = "/forecast"
+    to = "https://api.darksky.net"
+    status = 200
+    force = false
