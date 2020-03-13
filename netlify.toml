@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/forecast/*"
-  to = "https://api.darksky.net"
+  to = "https://api.darksky.net/forecast/"
   status = 200
   force = false
