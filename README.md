@@ -15,7 +15,6 @@
 * CSS
 * React
 * React-Router
-* Context Api
 
 ### DEMO
 
