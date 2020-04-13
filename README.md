@@ -15,6 +15,7 @@
 * CSS
 * React
 * React-Router
+* RWD
 
 ### DEMO
 
